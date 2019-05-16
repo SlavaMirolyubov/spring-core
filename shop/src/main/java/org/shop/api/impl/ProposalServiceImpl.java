@@ -2,6 +2,7 @@ package org.shop.api.impl;
 
 import java.util.List;
 
+import org.shop.aop.Loggable;
 import org.shop.api.ProductService;
 import org.shop.api.ProposalService;
 import org.shop.api.SellerService;

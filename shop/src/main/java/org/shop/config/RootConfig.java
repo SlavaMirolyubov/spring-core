@@ -1,16 +1,18 @@
 package org.shop.config;
 
 import org.shop.annotations.InjectRandomIntAnnotationBean;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
-import org.springframework.context.annotation.PropertySource;
+import org.shop.aop.Logging;
+import org.springframework.context.annotation.*;
 
 @Configuration
 @PropertySource("initial.properties")
 @Import({FactoryConfig.class, ServiceConfig.class, InitializerConfig.class, RepositoryConfig.class})
+@EnableAspectJAutoProxy
 public class RootConfig {
 
-
+    @Bean
+    public Logging logging() {
+        return new Logging();
+    }
 
 }

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.shop.aop.Loggable;
 import org.shop.api.ItemService;
 import org.shop.api.OrderService;
 import org.shop.data.Item;
@@ -38,7 +39,7 @@ public class OrderServiceImpl implements OrderService {
         
         return orderId;
     }
-    
+
     public Long createOrder(User user, Proposal... proposals) {
         List<Item> items = new ArrayList<Item>();
         

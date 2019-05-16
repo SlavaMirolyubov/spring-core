@@ -2,6 +2,7 @@ package org.shop;
 
 
 import org.shop.annotations.InjectRandomInt;
+import org.shop.aop.Loggable;
 import org.shop.config.FactoryConfig;
 import org.shop.config.RootConfig;
 import org.springframework.context.ApplicationContext;
@@ -18,6 +19,7 @@ public class ShopLauncher {
      */
     public static void main(String[] args) {
         //TODO: implement using Spring Framework ApplicationContext
-        new AnnotationConfigApplicationContext(RootConfig.class);
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(RootConfig.class);
+
     }
 }

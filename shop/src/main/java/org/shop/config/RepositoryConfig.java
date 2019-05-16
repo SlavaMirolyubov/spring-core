@@ -26,7 +26,6 @@ public class RepositoryConfig {
         return new InjectRandomIntAnnotationBean();
     }
 
-
     @Bean
     public UserRepository userRepository() {
         return new UserRepositoryFactory().createUserRepository();
