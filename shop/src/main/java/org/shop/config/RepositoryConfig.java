@@ -1,6 +1,8 @@
 package org.shop.config;
 
 
+import org.shop.ShopLauncher;
+import org.shop.annotations.InjectRandomIntAnnotationBean;
 import org.shop.repository.*;
 import org.shop.repository.factory.UserRepositoryFactory;
 import org.shop.repository.map.*;
@@ -14,11 +16,16 @@ import org.springframework.core.env.Environment;
 import javax.annotation.Resource;
 
 @Configuration
-@PropertySource("/initial.properties")
 public class RepositoryConfig {
 
     @Autowired
     Environment environment;
+
+    @Bean
+    public InjectRandomIntAnnotationBean injectRandomIntAnnotationBean() {
+        return new InjectRandomIntAnnotationBean();
+    }
+
 
     @Bean
     public UserRepository userRepository() {
