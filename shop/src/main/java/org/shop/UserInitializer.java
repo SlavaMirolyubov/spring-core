@@ -1,5 +1,6 @@
 package org.shop;
 
+import org.shop.aop.Loggable;
 import org.shop.api.UserService;
 import org.shop.data.User;
 
@@ -24,6 +25,7 @@ public class UserInitializer {
     /**
      * Inits the users.
      */
+    @Loggable
     public void initUsers() {
         User user = null;
         

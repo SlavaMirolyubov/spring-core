@@ -1,5 +1,6 @@
 package org.shop;
 
+import org.shop.aop.Loggable;
 import org.shop.api.ProductService;
 
 import org.shop.api.ProposalService;
@@ -29,6 +30,7 @@ public class ProposalInitializer {
     /**
      * Inits the proposals.
      */
+    @Loggable
     public void initProposals() {
         Seller amazon = sellerService.getSellerById((long) 1);
         Seller samsung = sellerService.getSellerById((long) 2);

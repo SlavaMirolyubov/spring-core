@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import org.shop.aop.Loggable;
 import org.shop.api.SellerService;
 import org.shop.data.Seller;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +22,13 @@ public class SellerInitializer {
     private SellerService sellerService;
     
     /** The seller names. */
-    @Resource(name = "mapBean")
+    @Autowired
     private Map<Long, String> sellerNames = Collections.emptyMap();
 
     /**
      * Inits the sellers.
      */
+    @Loggable
     public void initSellers() {
         List<Seller> sellers = new LinkedList<Seller>();
         

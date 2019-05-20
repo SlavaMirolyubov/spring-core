@@ -1,6 +1,7 @@
 package org.shop.config;
 
 
+import org.aspectj.weaver.ast.Or;
 import org.shop.ShopLauncher;
 import org.shop.annotations.InjectRandomIntAnnotationBean;
 import org.shop.repository.*;
@@ -33,11 +34,7 @@ public class RepositoryConfig {
 
     @Bean
     public OrderRepository orderRepository() {
-        OrderMapRepository orderMapRepository = new OrderMapRepository();
-        String intitialSequence = environment.getProperty("sequence");
-        assert intitialSequence != null;
-        orderMapRepository.setSequence(Long.parseLong(intitialSequence));
-        return orderMapRepository;
+        return new OrderMapRepository();
     }
 
     @Bean

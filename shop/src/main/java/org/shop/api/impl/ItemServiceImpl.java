@@ -2,6 +2,7 @@ package org.shop.api.impl;
 
 import java.util.List;
 
+import org.shop.aop.Loggable;
 import org.shop.api.ItemService;
 import org.shop.data.Item;
 import org.shop.repository.ItemRepository;

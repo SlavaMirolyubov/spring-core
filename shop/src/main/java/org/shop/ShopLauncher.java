@@ -1,9 +1,9 @@
 package org.shop;
 
-
-import org.shop.annotations.InjectRandomInt;
-import org.shop.aop.Loggable;
-import org.shop.config.FactoryConfig;
+import org.apache.log4j.Logger;
+import org.shop.api.ProductService;
+import org.shop.api.SellerService;
+import org.shop.api.UserService;
 import org.shop.config.RootConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -12,6 +12,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  * The ShopLauncher class.
  */
 public class ShopLauncher {
+
     /**
      * The main method.
      *
@@ -21,5 +22,10 @@ public class ShopLauncher {
         //TODO: implement using Spring Framework ApplicationContext
         ApplicationContext ctx = new AnnotationConfigApplicationContext(RootConfig.class);
 
+        ctx.getBean(ProductService.class).getProducts().forEach(System.out::println);
+
+        ctx.getBean(SellerService.class).getSellers().forEach(System.out::println);
+
+        ctx.getBean(UserService.class).getUsers().forEach(System.out::println);
     }
 }
